@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    command: "symfony server:start --no-tls"
+    user: 1000:1000
+    volumes:
+      - ./:/code
+    ports:
+      - 8080:8080
+
+
