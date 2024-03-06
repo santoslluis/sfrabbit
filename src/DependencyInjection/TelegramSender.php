@@ -18,7 +18,7 @@ class TelegramSender
     public function send(TelegramMessage $message): void
     {
         $url = "https://api.telegram.org/bot" . $this->api_key . "/sendMessage";
-        $options = 'chat_id=' . $this->chat_id . '&text' . $message->message;
+        $options = 'chat_id=' . $this->chat_id . '&text=' . urlencode($message->message);
         file_get_contents($url . '?' . $options);
     }
 }

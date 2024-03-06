@@ -18,6 +18,6 @@ class TelegramMessageHandler {
 
     public function __invoke(TelegramMessage $message)
     {
-        // ... do some work - like sending an SMS message!
+        $this->telegram->send($message);
     }
 }

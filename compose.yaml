@@ -12,15 +12,15 @@ services:
 
   consumer:
     build: .
-    command: "symfony messenger:consume async"
+    command: "bash -c 'while true; do timeout 10m bin/console messenger:consume async -vv; done'"
     user: 1000:1000
     volumes:
       - ./:/code
 
-  management:
+  rabbit:
     image: rabbitmq:management
     ports:
       - 8080:15672
 
-  rabbit:
-    image: rabbitmq
+  #rabbit:
+  #  image: rabbitmq
