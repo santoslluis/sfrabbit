@@ -15,7 +15,11 @@ via RabbitMQ.
 - Start a conversation with your new bot.
 - Get the chat id with `curl https://api.telegram.org/bot<bot-api-key>/getUpdates`
 - Set up the `TG_API_KEY` and `TG_CHAT_ID` variables in `.env.local`
+- Install symfony dependencies with `docker run api composer install`
 - Run the api with `docker compose up`
+
+## Test
+To run the tests, simply execute `bin/phpunit`
 
 ## Usage
 ```curl http://localhost:8000/say -X POST -H 'content-type: application/ld+json' -d '{"message": "Hello, World!"}'```
