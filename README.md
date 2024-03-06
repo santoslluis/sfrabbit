@@ -22,3 +22,11 @@ via RabbitMQ.
 
 This will make your bot send a message to yourself.
 
+## Let's do some fun
+- Check the RabbitMQ statistics on http://localhost:8080 (user: guest, pass: guest).
+- Stop the consumer with `docker compose stop consumer`, send some messages with curl and start it again with
+`docker compose start consumer`.
+- Send a bunch of messages in a loop with
+```while true;do  curl http://localhost:8000/say -X POST -H 'content-type: application/ld+json' -d '{"message": "Hello, World!"}';done```
+and check what happens.
+
